@@ -1,0 +1,28 @@
+{
+  "name": "frontend-boilerplate-ng1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/webpack-dev-server --content-base src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanish1984/frontend-boilerplate-ng1.git"
+  },
+  "author": "vanish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanish1984/frontend-boilerplate-ng1/issues"
+  },
+  "homepage": "https://github.com/vanish1984/frontend-boilerplate-ng1#readme",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-sanitize": "^1.5.5",
+    "angular-ui-router": "^0.3.2",
+    "bootstrap": "^3.3.6"
+  },
+  "devDependencies": {
+  }
+}
