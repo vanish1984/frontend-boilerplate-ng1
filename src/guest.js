@@ -1,3 +1,4 @@
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./asserts/lib/admin-lte/dist/css/AdminLTE.min.css";
 import "./asserts/lib/admin-lte/dist/css/skins/_all-skins.min.css";
@@ -10,13 +11,8 @@ window.$ = window.jQuery = jQuery;
 require('./asserts/lib/jquery-migrate-1.4.1.min');
 require('bootstrap');
 
-$(function () {
-
-});
-
 
 $(document).ready(function () {
-    console.info('11');
     if ($.browser.msie) {
         window.location = '/browsers';
         return;

@@ -23,6 +23,7 @@ module.exports = function makeWebpackConfig() {
      */
     var config = {};
 
+
     /**
      * Entry
      * Reference: http://webpack.github.io/docs/configuration.html#entry
@@ -30,7 +31,8 @@ module.exports = function makeWebpackConfig() {
      * Karma will set this when it's a test build
      */
     config.entry = isTest ? void 0 : {
-        app: './src/app.js'
+        guest: './src/guest.js',
+        dashboard: './src/dashboard.js'
     };
 
     /**
@@ -45,7 +47,7 @@ module.exports = function makeWebpackConfig() {
 
         // Output path from the view of the page
         // Uses webpack-dev-server in development
-        publicPath: isProd ? '/' : 'http://localhost:8888/',
+        // publicPath: isProd ? '/' : 'http://0.0.0.0:8886/',
 
         // Filename for entry points
         // Only adds hash in build mode
@@ -179,12 +181,16 @@ module.exports = function makeWebpackConfig() {
                 template: './src/index.html',
                 inject: 'body'
             }),
-
+            new HtmlWebpackPlugin({
+                template: './src/dashboard.html',
+                filename: 'dashboard.html',
+                inject: 'body'
+            }),
             // Reference: https://github.com/webpack/extract-text-webpack-plugin
             // Extract css files
             // Disabled when in test mode or not in build mode
             new ExtractTextPlugin({filename: 'css/[name].css', disable: !isProd, allChunks: true})
-        )
+        );
     }
 
     // Add build specific plugins
@@ -216,6 +222,8 @@ module.exports = function makeWebpackConfig() {
      * Reference: http://webpack.github.io/docs/webpack-dev-server.html
      */
     config.devServer = {
+        host: '0.0.0.0',
+        disableHostCheck: true,
         contentBase: './src',
         stats: 'minimal'
     };
